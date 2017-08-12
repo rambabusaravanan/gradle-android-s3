@@ -1,0 +1,10 @@
+buildscript {
+    repositories {
+        mavenLocal()
+    }
+    dependencies {
+        classpath 'com.rambabusaravanan.gradle:plugin:1.0-SNAPSHOT'
+    }
+}
+
+apply plugin: 'com.github.rambabusaravanan.android-s3'

@@ -1,0 +1,6 @@
+package (group name): com.rambabusaravanan.gradle
+artifact id (name): plugin | expected: android-s3
+
+plugin id: com.github.rambabusaravanan.android-s3
+
+main: com.rambabusaravanan.gradle.AndroidS3Plugin

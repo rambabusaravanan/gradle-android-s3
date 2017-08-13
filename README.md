@@ -2,6 +2,8 @@
 
 Upload the apk of all the build variants to S3 and maintain all flavours of every version.
 
+Plugin Url : https://plugins.gradle.org/plugin/com.github.rambabusaravanan.android-s3
+
 ## Step 1
 
 Add the following to project's root `build.gradle` 
@@ -9,10 +11,12 @@ Add the following to project's root `build.gradle`
 ```
 buildscript {
     repositories {
-        mavenLocal()    // android-s3 plugin repo
+        maven {
+            url "https://plugins.gradle.org/m2/"
+        }
     }
     dependencies {
-        classpath 'com.rambabusaravanan.gradle:plugin:1.0-SNAPSHOT' // android-s3 plugin
+        classpath "gradle.plugin.com.rambabusaravanan.gradle:android-s3:1.0.0"
     }
 }
 ```

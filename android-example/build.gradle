@@ -3,14 +3,16 @@
 buildscript {
     repositories {
         jcenter()
-        mavenLocal()    // android-s3 plugin repo
+        maven {
+            url "https://plugins.gradle.org/m2/"
+        }
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:2.3.3'
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
 
-        classpath 'com.rambabusaravanan.gradle:plugin:1.0-SNAPSHOT' // android-s3 plugin
+        classpath "gradle.plugin.com.rambabusaravanan.gradle:android-s3:1.0.0" // android-s3 plugin
     }
 }
 

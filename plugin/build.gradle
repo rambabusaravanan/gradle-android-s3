@@ -8,13 +8,14 @@ dependencies {
 apply plugin: 'maven'
 
 
-// repositories {
-//     mavenCentral()
-// }
+repositories {
+    mavenCentral()
+}
 
-// dependencies {
-//     testCompile 'junit:junit:4.12'
-// }
+dependencies {
+    compile 'com.amazonaws:aws-java-sdk-s3:1.11.176'
+    testCompile 'junit:junit:4.12'
+}
 
 group = 'com.rambabusaravanan.gradle'
 version = '1.0-SNAPSHOT'

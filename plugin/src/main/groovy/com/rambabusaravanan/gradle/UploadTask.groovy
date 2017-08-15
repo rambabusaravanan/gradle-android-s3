@@ -6,21 +6,24 @@ import com.amazonaws.services.s3.transfer.MultipleFileUpload
 import com.amazonaws.services.s3.transfer.TransferManager
 import org.gradle.api.DefaultTask
 import org.gradle.api.Task
-import org.gradle.api.provider.PropertyState
-import org.gradle.api.provider.Provider
 import org.gradle.api.specs.Spec
 import org.gradle.api.tasks.TaskAction
 
 class UploadTask extends DefaultTask {
-    final PropertyState<String> bucketName = project.property(String)
-    final PropertyState<String> keyPrefix = project.property(String)
-    final PropertyState<String> uploadPath = project.property(String)
+    String bucketName, keyPrefix, uploadPath;
 
-    void setBucketName(Provider<String> bucketName) { this.bucketName.set(bucketName) }
+    void initialize() {
+        bucketName = project.s3.bucketName;
+        keyPrefix = project.s3.keyPrefix;
+        uploadPath = project.s3.uploadPath;
 
-    void setKeyPrefix(Provider<String> keyPrefix) { this.keyPrefix.set(keyPrefix) }
-
-    void setUploadPath(Provider<String> uploadPath) { this.uploadPath.set(uploadPath) }
+        if(!bucketName?.trim())
+            bucketName = ''
+        if(!keyPrefix?.trim())
+            keyPrefix = project.android.defaultConfig.applicationId + "/" + project.android.defaultConfig.versionName
+        if(!uploadPath?.trim())
+            uploadPath = "$project.buildDir/outputs/apk"
+    }
 
     static void upload(String bucketName, String keyPrefix, String uploadPath) {
         TransferManager manager = new TransferManager();
@@ -54,6 +57,7 @@ class UploadTask extends DefaultTask {
 
     @TaskAction
     void run() {
-        upload(bucketName.get(), keyPrefix.get(), uploadPath.get())
+        initialize()
+        upload(bucketName, keyPrefix, uploadPath)
     }
 }

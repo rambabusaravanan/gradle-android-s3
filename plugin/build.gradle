@@ -11,37 +11,24 @@ buildscript {
 
 apply plugin: "com.gradle.plugin-publish"
 apply plugin: 'groovy'
-
-dependencies {
-    compile gradleApi()
-    compile localGroovy()
-}
-
 apply plugin: 'maven'
-
 
 repositories {
     mavenCentral()
 }
 
 dependencies {
+    compile gradleApi()
+    compile localGroovy()
     compile 'com.amazonaws:aws-java-sdk-s3:1.11.176'
     testCompile 'junit:junit:4.12'
 }
 
 group = 'com.rambabusaravanan.gradle'
-version = '1.0.0'
-
-// uploadArchives {
-//     repositories {
-//         mavenDeployer {
-//             repository(url: uri('../repo'))
-//         }
-//     }
-// }
+version = '1.0.1'
 
 pluginBundle {
-  website = 'https://github.com/rambabusaravanan/gradle-android-s3/blob/master/README.md'
+  website = 'https://rambabusaravanan.github.io/gradle-android-s3'
   vcsUrl = 'https://github.com/rambabusaravanan/gradle-android-s3.git'
   description = 'A simple light weight Gradle plugin for Android project to upload apk of all the build variants to AWS S3. This helps you to maintain all flavour of ever version easily in S3. For usage, please visit docs.'
   tags = ['AWS', 'S3', 'Android', 'Product Flavours', 'Build Types']
@@ -49,7 +36,7 @@ pluginBundle {
   plugins {
     androidS3Plugin {
       id = 'com.github.rambabusaravanan.android-s3'
-      displayName = 'Android S3 Upload Plugin'
+      displayName = 'Android AWS S3 Uploader'
     }
   }
 }

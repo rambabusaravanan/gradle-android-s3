@@ -32,9 +32,11 @@ dependencies {
 
 // android-s3 plugin
 
-apply plugin: 'com.github.rambabusaravanan.android-s3'
+apply plugin: 'com.rambabusaravanan.android-s3'
 
 s3 {
+    accessKey = 'AKIA****************'
+    secretKey = 'TPSi************************************'
     bucketName = 'apkbuilder'
 }
 

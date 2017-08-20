@@ -25,18 +25,18 @@ dependencies {
 }
 
 group = 'com.rambabusaravanan.gradle'
-version = '1.0.1'
+version = '1.0.2'
 
 pluginBundle {
   website = 'https://rambabusaravanan.github.io/gradle-android-s3'
   vcsUrl = 'https://github.com/rambabusaravanan/gradle-android-s3.git'
-  description = 'A simple light weight Gradle plugin for Android project to upload apk of all the build variants to AWS S3. This helps you to maintain all flavour of ever version easily in S3. For usage, please visit docs.'
-  tags = ['AWS', 'S3', 'Android', 'Product Flavours', 'Build Types']
+  description = 'A simple light weight Gradle plugin for Android project to upload apk of all the build variants to AWS S3. This helps you to maintain all flavour of every version easily in S3. For usage, please visit docs for usage ..'
+  tags = ['AWS', 'S3', 'Android', 'APK', 'Product Flavours', 'Build Types']
 
   plugins {
     androidS3Plugin {
-      id = 'com.github.rambabusaravanan.android-s3'
-      displayName = 'Android AWS S3 Uploader'
+      id = 'com.rambabusaravanan.android-s3'
+      displayName = 'Android S3 Uploader'
     }
   }
 }

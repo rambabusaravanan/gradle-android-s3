@@ -1,0 +1,12 @@
+package (group name): com.rambabusaravanan.gradle
+artifact id (name): android-s3
+
+plugin id: com.github.android-s3
+
+main: com.rambabusaravanan.gradle.AndroidS3Plugin
+
+
+## Reference
+https://docs.gradle.org/4.1/userguide/custom_plugins.html
+http://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/examples-s3-transfermanager.html
+http://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/credentials.html

@@ -33,7 +33,7 @@ s3 {
     secretKey = 'TPSi************************************'
     bucketName = "apkbuilder"
 
-    keyPath = "path/to/key"                 // (Optional) Default: "com.packagename/versionname"
+    keyPrefix = "path/to/key"                 // (Optional) Default: "com.packagename/versionname"
     uploadPath = "app/build/outputs/apk"    // (Optional) Default: "$target.buildDir/outputs/apk"
 }
 
